@@ -24,7 +24,9 @@ export class ReferenceNcv implements IReferenceTools {
     const reg1 = this.generateRegExp();
     const r2 = new SplitStringByRegExp().main(this.str, reg1);
     this.regResult = r2;
-    return r2.length !== 1;
+    return LQ.from(r2)
+      .select((a1) => a1.exec)
+      .any((a1) => a1 !== undefined);
   }
   private generateRegExp() {
     if (this.isGb !== 1) {
@@ -55,7 +57,11 @@ export class ReferenceNcv implements IReferenceTools {
     }
 
     const r2 = this.regResult!;
-    if (r2.length === 1) {
+    if (
+      LQ.from(r2)
+        .select((a1) => a1.exec)
+        .all((a1) => a1 === undefined)
+    ) {
       return this.str;
     }
 

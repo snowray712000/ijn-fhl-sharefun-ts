@@ -28,3 +28,9 @@ test('ncv reference 多處', () => {
     toStandardReference('林前11 要用（太26:26~28；可14:22~24；路22:17~20）兩處（太26:26~28；可14:22~24；路22:17~20）'),
   ).toBe('林前11 要用（#太26:26-28;可14:22-24;路22:17-20|）兩處（#太26:26-28;可14:22-24;路22:17-20|）');
 });
+
+test('ncv reference Bug Case', () => {
+  const r1 = new ReferenceNcv('（太26:26~28；可14:22~24；路22:17~20）');
+  expect(r1.isIncludeRef()).toBe(true);
+  expect(r1.toStandard()).toBe('（#太26:26-28;可14:22-24;路22:17-20|）');
+});
