@@ -1,6 +1,6 @@
 {
   "name": "ijn-fhl-sharefun-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "linq": "^3.2.3"
   },
