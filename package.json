@@ -1,7 +1,9 @@
 {
   "name": "ijn-fhl-sharefun-ts",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "linq": "^3.2.3"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.19",
     "jest": "^26.6.3",
